@@ -1,0 +1,35 @@
+<?php
+
+class MainMenu extends CWidget {
+
+    public $menuItems;
+    public $subMenuItems;
+
+    public function init() {
+        $this->menuItems = array(
+            array('label' => 'Tracks', 'url' => array('/cms/track/index')),
+            array('label' => 'Collections', 'url' => array('/cms/collection/index')),
+            array('label' => 'In-App', 'url' => array('/cms/inapp/index')),
+            array('label' => 'Images', 'url' => array('/cms/image/index')),
+            array('label' => 'Modifiers', 'url' => array('/cms/modifier/index')),
+            array('label' => 'News', 'url' => array('/cms/news/index')),
+            array('label' => 'Content', 'url' => array('/cms/content/index')),
+            array('label' => 'Administrator', 'url' => array('/admin/index'), 'visible' => _user()->role >= Role::ADMIN,
+                'items' => array(
+                    array('label' => 'View logs', 'url' => array('/admin/logs')),
+                    array('label' => 'System settings', 'url' => array('/admin/system')),
+                    array('label' => 'Users', 'url' => array('/admin/users')),
+            )),
+        );
+        Utils::triggerEvent('onIndexMenu', $this);
+    }
+
+    public function run() {
+        $this->render('mainMenu');
+    }
+
+    public function addMenuItem(array $item) {
+        $this->menuItems[] = $item;
+    }
+
+}

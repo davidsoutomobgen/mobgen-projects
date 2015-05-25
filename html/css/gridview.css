@@ -1,0 +1,104 @@
+/**
+ * MobGen CSS styles for CGridView.
+ * @author David Souto <david.souto@mobgen.com>
+ */
+
+.grid-view-loading {
+	background:url(loading.gif) no-repeat;
+}
+
+.grid-view {
+	padding:15px 0;
+    margin-top: -42px;
+}
+
+.grid-view table.items {
+	background:white;
+	border-collapse:collapse;
+	width:100%;
+	border:1px #d0e3ef solid;
+}
+
+.grid-view table.items th, .grid-view table.items td {
+	font-size:0.9em;
+	border:1px white solid;
+	padding:0.3em;
+}
+
+.grid-view table.items th {
+	color:#000;
+	background-color:#c9c9c9;
+    font-weight:bold;
+	text-align:center;
+    font-size:12px;
+}
+
+.grid-view table.items th a {
+	color:#000;
+	text-decoration:none;
+    font-size: 12px;
+}
+
+.grid-view table.items th a:hover {
+	color:#fff;
+}
+
+.grid-view table.items th a.asc {
+	background:url(up.gif) right center no-repeat;
+	padding-right:10px;
+}
+
+.grid-view table.items th a.desc {
+	background:url(down.gif) right center no-repeat;
+	padding-right:10px;
+}
+
+.grid-view table.items tr.even {
+	background:#f8f8f8;
+}
+
+.grid-view table.items tr.odd {
+	background:#e8e8e8;
+}
+
+.grid-view table.items tbody tr:hover {
+	background:#d8d8d8;
+	cursor:pointer;
+}
+
+.grid-view .link-column img {
+	border:0;
+}
+
+.grid-view .button-column {
+	text-align:center;
+	width:84px;
+}
+
+.grid-view .button-column img {
+	border:0;
+}
+
+.grid-view .checkbox-column {
+	width:15px;
+}
+
+.grid-view .summary {
+	margin:0 20px 5px 0;
+	text-align:right;
+}
+
+.grid-view .pager {
+	margin:5px 0 0 0;
+	text-align:right;
+}
+
+.grid-view .empty {
+	font-style:italic;
+}
+
+.grid-view .filters input,
+.grid-view .filters select {
+	width:100%;
+	border:1px solid #ccc;
+}

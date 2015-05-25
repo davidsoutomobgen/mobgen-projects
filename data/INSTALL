@@ -1,0 +1,39 @@
+Prerequisites
+-------------
+
+- A web server that supports URL rewrite and enabled.
+- PHP 5.3+
+- MySQL 5+
+- Yii 1.1.12
+- PHP APC extension (optional)
+
+Configuration
+-------------
+
+1. Create database and corresponding user.
+2. Edit protected/config/main.php to match the DB details to the new database.
+3. Import skeleton DB from data/api-skeleton.sql.
+4. Copy the ._htaccess file to .htaccess and edit it to rewrite to correct location (optional), also here you can use your personal
+	index file (example: index_local.php)
+5. Edit the index.php / index_local.php, index-test.php and protected/yiic.php to point to your Yii location.
+
+Procedure
+---------
+
+For each web service action created, you should do the following actions:
+
+1. Add the regular expression needed to match the incoming request in ApiUrlRule.php
+2. Add the action to the verb filter on top of ApiController.php
+3. Write the code to handle the requested action and use the respond() method to respond to the call
+
+
+Standards
+---------
+
+- Strictly follow the standards stated here https://github.com/yiisoft/yii/wiki/Core-framework-code-style.
+- Keyword literals (true, false, null) are to be lower-case.
+- Configure your IDE to indent to four(4) spaces as tabs.
+- After initial DB import, use Yii migrations for any changes to the DB.
+- Don't commit changing folders such as assets/ and protected/runtime.
+- Use comments sparsely but use phpDocs on every public & protected method!
+- When writing model methods, develop using unit testing.

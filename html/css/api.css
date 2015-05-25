@@ -1,0 +1,273 @@
+/*GENERAL*/
+body {
+    font-family:  'Open Sans',Verdana,serif;
+    font-size: 0.9em;
+    color: #222;
+    background: url('../images/mainbg.png') no-repeat scroll center -30px transparent;
+}
+a {
+    text-decoration: none;
+    color: #777;
+}
+a:hover {
+    color: #000;
+}
+th, td {
+    font-weight: normal;
+    text-align: left;
+    vertical-align: middle;
+}
+h4 {
+    font-size: 1.1em;
+    margin: 0;
+    padding: 15px 0 5px 0;
+    font-weight: 400;
+}
+
+/*API DOCS*/
+.method_list {
+    list-style: none outside none;
+    margin: 0 auto;
+    padding: 0;
+    width: 800px;
+}
+.method_list li {
+    margin: 5px 0;
+    padding: 0;
+}
+li.post .method_name,
+li.put .method_name,
+li.get .method_name {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    line-height: 2em;
+}
+.method_body {
+    padding: 10px;
+}
+li.post .method_body {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    margin: 0 0 20px;
+    background-color: #EBF7F0;
+    border-color: #EBF7F0;
+}
+li.put .method_body {
+    background-color: #FAF5EE;
+    border-color: #FAF5EE;
+}
+li.get .method_body {
+    background-color: #EBF3F9;
+    border-color: #EBF3F9;
+}
+
+li.post > p {
+    border: 1px solid #C3E8D1;
+    background-color: #E7F6EC;
+}
+li.put > p {
+    border: 1px solid #F0E0CA;
+    background-color: #F9F2E9;
+}
+li.get > p {
+    border: 1px solid #C3D9EC;
+    background-color: #E7F0F7;
+}
+li.post .method_name span.label, 
+li.put .method_name span.label,
+li.get .method_name span.label {
+    font-size: 0.9em;
+    color: #fff;
+    padding: 7px 6px 6px;
+    border-radius: 2px 2px 2px 2px;
+}
+li.post .method_name span.label {
+    background-color: #10A54A;
+}
+li.put .method_name span.label {
+    background-color: #C5862B;
+}
+li.get .method_name span.label {
+    background-color: #0F6AB4;
+}
+li.post .method_name span.path,
+li.put .method_name span.path,
+li.get .method_name span.path {
+    font-size: 0.9em;
+    color: #444;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 10px;
+}
+.method_name span.options {
+    clear: none;
+    display: block;
+    float: right;
+    margin: 0 10px 0 0;
+    overflow: hidden;
+    padding: 0;
+    font-size: 0.9em;
+}
+li.post .method_name span.options {
+    color: #10A54A;
+}
+li.put .method_name span.options {
+    color: #C5862B;
+}
+li.get .method_name span.options {
+    color: #0F6AB4;
+}
+li.post h4 {
+    color: #10A54A;
+}
+table.fullwidth {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    vertical-align: middle;
+}
+table.fullwidth thead tr th {
+    border-bottom: 1px solid #999999;
+    color: #666666;
+    padding: 5px;
+    font-weight: 400;
+    font-size: 0.9em;
+}
+table.fullwidth tbody tr td {
+    border-bottom: 1px solid #CCCCCC;
+    font-size: 0.9em;
+    line-height: 1.3em;
+    padding: 6px;
+    vertical-align: top;
+}
+.code {
+    font-family: "Anonymous Pro","Menlo","Consolas","Bitstream Vera Sans Mono","Courier New",monospace;
+}
+.code.required {
+    font-weight: bold;
+}
+.example {
+    padding: 10px;
+    font-size: 0.9em;
+}
+.example .form {
+    padding: 20px 10px 10px;
+}
+.example .form input,
+.example .form select {
+    margin-right: 20px;
+}
+.example .form input[type=submit] {
+    border: #000 1px solid;
+    border-radius: 6px 6px;
+    background-color: brown;
+    color: white;
+}
+.message {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: #fff;
+    border: #888 1px solid;
+    border-radius: 3px 3px;
+    padding: 5px;
+    color: #333;
+    line-height: 1.1em;
+    display: none;
+    width: 90%;
+    margin: 0 auto;
+}
+.collapse_all_message {
+    display: none;
+}
+.notes {
+    width: 800px;
+    margin: 0 auto;
+    font-size: 0.9em;
+}
+.hidden {
+    display: none;
+}
+
+/*FORMS*/
+.login-box {
+    width: 200px;
+    margin: 0 auto;
+}
+
+/*INDEX*/
+.index {
+    width: 800px;
+    text-align: center;
+    margin: 0 auto;
+}
+.index .buttons {
+    width: 200px;
+    margin: 40px auto;
+}
+.index .buttons .msg-ok, 
+.index .buttons .msg-nok {
+    float: right;
+    background-image:  url(../images/ok.png);
+    background-repeat: no-repeat;
+    height: 22px;
+    width: 22px;
+    margin: -70px -70px;
+    display: none;
+}
+.index .buttons .msg-nok {
+    background-image:  url(../images/error.png);
+}
+.index .button {
+    width: 200px;
+    margin: 40px auto;
+    padding: 10px;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 5px #0F6AB4;
+}
+.index .button.login-required {
+    box-shadow: 2px 2px 5px #0F6AB4;
+}
+.index .button.admin-required {
+    box-shadow: 2px 2px 5px #B72F09;
+}
+.index .button.data {
+    box-shadow: 2px 2px 5px #C3D9EC;
+}
+.index table.category-table {
+    width: 100%;
+}
+.index table.category-table td {
+    border-bottom: 1px solid #222;
+}
+.index table.category-table th {
+    border-bottom: 2px solid #222;
+}
+
+/*LOGS*/
+.logs {
+    height: 700px;
+    overflow: scroll;
+}
+.logs,
+.logs-script {
+    font-size: 0.9em;
+    color: gray;
+    height: 400px;
+    overflow: scroll;
+    margin-bottom: 20px;
+}
+.logs .error,
+.logs-script .error {
+    color: red;
+}
+.logs .warning,
+.logs-script .warning {
+    color: orange;
+}
+.logs .info,
+.logs-script .info {
+    color: #588132;
+}
