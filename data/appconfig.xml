@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<XML>
+<MGAPICONFIG>
+<STATIC>
+	<NAME>Mobgen B.V.</NAME>
+	<DATE>2013-01-28</DATE>
+</STATIC>
+
+<ENVSETUPS>
+	<ENVSETUP key="DEFAULT">
+		<TITLE>Title (DEFAULT)</TITLE>
+		<URL>http://demoapi.mobgen.com</URL>
+		<EMAIL_FROM>tech@mobgen.com</EMAIL_FROM>
+		<EMAIL_ERROR>tech@mobgen.com</EMAIL_ERROR>
+		<EMAIL_CONTACTFORM>tech@mobgen.com</EMAIL_CONTACTFORM>
+		<COOKIE_NAME>MGAPI-skeleton-IR</COOKIE_NAME>
+
+		<LANGUAGES>en</LANGUAGES>
+	</ENVSETUP>
+
+	<ENVSETUP key="DEFAULT_LINUX">
+		<PHP_ERROR_REPORTING_LEVEL>6135</PHP_ERROR_REPORTING_LEVEL>
+
+		<PROJECT_ROOT>/var/www/api-skeleton</PROJECT_ROOT>
+		<LOG_PATH>[[PROJECT_ROOT]]/data/logs/</LOG_PATH>
+
+		<LOCAL_TEMP_PATH>   /var/tmp/temp_upload              </LOCAL_TEMP_PATH>
+		<LOCAL_FEED_PATH>   [[PROJECT_ROOT]]/data/feedupdates </LOCAL_FEED_PATH>
+		<LOCAL_FEED_HISTORY>[[PROJECT_ROOT]]/data/feedhistory </LOCAL_FEED_HISTORY>
+
+	</ENVSETUP>
+
+	<ENVSETUP key="DEV_USERNAME">
+		<PROJECT_ROOT>/home/username/www/api-skeleton</PROJECT_ROOT>
+	</ENVSETUP>
+
+</ENVSETUPS>
+</MGAPICONFIG>
+</XML>

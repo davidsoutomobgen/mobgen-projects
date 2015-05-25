@@ -1,0 +1,54 @@
+<?php
+/* @var $this SiteController */
+?>
+
+<h1>Dashboard</h1>
+
+<?php
+$this->widget('zii.widgets.CMenu', array(
+	'id' => 'dashboard',
+	'items' => array(
+		array(
+			'label' => 'Tracks',
+			'url' => array('cms/track/index'),
+			'linkOptions' => array(
+				'style' => 'background-image:url("/images/track.png");'
+			),
+		),
+		array(
+			'label' => 'Collections',
+			'url' => array('cms/collection/index'),
+			'linkOptions' => array(
+				'style' => 'background-image:url("/images/collection.png");'
+			),
+		),
+        array(
+            'label' => 'In-app',
+            'url' => array('cms/inapp/index'),
+            'linkOptions' => array(
+                'style' => 'background-image:url("/images/app_store.png");'
+            ),
+        ),
+		array(
+			'label' => 'Images',
+			'url' => array('cms/image/index'),
+			'linkOptions' => array(
+				'style' => 'background-image:url("/images/image.png");'
+			),
+		),
+		array(
+			'label' => 'Modifiers',
+			'url' => array('cms/modifier/index'),
+			'linkOptions' => array(
+				'style' => 'background-image:url("/images/modifier.png");'
+			),
+		),
+		array(
+			'label' => 'News',
+			'url' => array('cms/news/index'),
+			'linkOptions' => array(
+				'style' => 'background-image:url("/images/news.png");'
+			),
+		),
+	),
+));

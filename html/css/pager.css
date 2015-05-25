@@ -1,0 +1,45 @@
+/**
+ * MobGen CSS styles for CLinkPager.
+ *
+ * @author David Souto <david.souto@mobgen.com>
+ */
+
+ul.yiiPager {
+	margin:0;
+	padding:0;
+	display:inline-block;
+}
+
+ul.yiiPager li {
+	float:left;
+	display:block;
+	margin-left:2px;
+}
+
+ul.yiiPager a:link,
+ul.yiiPager a:visited {
+	display:block;
+	margin:0;
+	padding:4px 10px;
+	text-align:center;
+	color:white;
+	background-color:#16588f;
+	text-decoration:none;
+}
+
+ul.yiiPager .first a,
+ul.yiiPager .previous a,
+ul.yiiPager .next a,
+ul.yiiPager .last a {
+	padding:2px 10px 6px;
+}
+
+ul.yiiPager a:hover,
+ul.yiiPager .selected a {
+	background-color:#0d3a78;
+	font-weight:bold;
+}
+
+ul.yiiPager .hidden a {
+	background-color:#ccc;
+}

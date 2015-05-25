@@ -1,0 +1,38 @@
+div.form div.ems-search {
+    text-align: right;
+}
+
+div.form label.ems-search-label {
+    display: inline-block;
+    margin-right: 5px;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+div.form input.ems-search-field {
+}
+
+div.form div.ems-options {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+div.form div.ems-options select.ems-available-options,
+div.form div.ems-options select.ems-selected-options {
+    width: 200px;
+}
+
+div.form div.ems-controls {
+    display: inline-block;
+    margin: 10px;
+    width: 28px;
+}
+
+div.form button.ems-button {
+    display: block;
+    margin-bottom: 10px;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    font-size: 1.2em;
+}

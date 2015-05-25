@@ -1,0 +1,1 @@
+<?php echo $log ? : 'no logs yet'; ?>

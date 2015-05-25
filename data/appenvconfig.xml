@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xml>
+<envconfig>
+<static>
+	<name>Mobgen B.V.</name>
+	<date>2013-03-19</date>
+</static>
+
+<envsetups>
+	<envsetup key="default">
+		<params>
+			<param key="default">
+				<title>Title (DEFAULT)</title>
+				<url>http://demoapi.mobgen.com</url>
+				<email_from>tech@mobgen.com</email_from>
+				<email_error>tech@mobgen.com</email_error>
+				<email_contactform>tech@mobgen.com</email_contactform>
+				<cookie_name>MGAPI-skeleton-IR</cookie_name>
+				<languages>en</languages>
+			</param>
+		</params>
+	</envsetup>
+
+	<envsetup key="yii">
+<!--	<yii> -->
+			<basePath>[[project_root]]</basePath>
+			<name>MobGen Mobile Web Service</name>
+			<runtimePath>[[project_root]]/runtime</runtimePath>
+
+			<preload>
+				<val key="">log</val>
+			</preload>
+
+			<import>
+				<val key=""><![CDATA[application.models.*]]></val>
+				<val key="">application.components.*</val>
+			</import>
+
+			<components>
+				<db>
+					<connectionString>mysql:host=localhost;dbname=database</connectionString>
+					<emulatePrepare>true</emulatePrepare>
+					<username>username</username>
+					<password>password</password>
+					<charset>utf8</charset>
+				</db>
+
+				<log>
+					<class>CLogRouter</class>
+					<routes>
+						<routes key="0">
+							<class>CFileLogRoute</class>
+							<levels>error, warning</levels>
+							<logPath>[[project_root]]/runtime/</logPath>
+						</routes>
+						<routes key="1">
+							<class>LiveLogRoute</class>
+							<levels>error, warning, info</levels>
+							<maxFileSize>1024</maxFileSize>
+							<categories>mobgen-script</categories>
+							<logFile>mobgen-script.log</logFile>
+						</routes>
+						<routes key="2">
+							<class>LiveLogRoute</class>
+							<levels>error, warning, info</levels>
+							<maxFileSize>1024</maxFileSize>
+							<categories>mobgen</categories>
+							<logFile>mobgen.log</logFile>
+						</routes>
+					</routes>
+
+				</log>
+			</components>
+
+		<params>
+			<console>true</console>
+			<xmlconfig>1</xmlconfig>
+		</params>
+<!--	</yii> -->
+	</envsetup>
+
+	<envsetup key="linux">
+		<ds>/</ds>
+		<php_error_reporting_level>6135</php_error_reporting_level>
+
+		<project_root>/var/www/api-skeleton</project_root>
+		<log_path>[[project_root]][[ds]]data[[ds]]logs[[ds]]</log_path>
+
+		<local_temp_path>/var/tmp/temp_upload</local_temp_path>
+		<local_feed_path>[[project_root]]/data/feedupdates</local_feed_path>
+		<local_feed_history>[[project_root]]/data/feedhistory</local_feed_history>
+		<yii_section>==========================</yii_section>
+	</envsetup>
+
+	<envsetup key="cli">
+	</envsetup>
+
+	<envsetup key="web">
+	</envsetup>
+
+	<envsetup key="dev_username">
+		<project_root>/home/username/www/api-skeleton</project_root>
+	</envsetup>
+
+	<envsetup key="sascha">
+		<project_root>/home/sascha/www2/api-skeleton</project_root>
+	</envsetup>
+
+</envsetups>
+</envconfig>
+</xml>
