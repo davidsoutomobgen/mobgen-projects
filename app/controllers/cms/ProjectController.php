@@ -28,7 +28,7 @@ class ProjectController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'list'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -237,7 +237,7 @@ class ProjectController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+	public function actionList()
 	{
         $model = new Project('search');
         $model->unsetAttributes();  // clear any default values
@@ -245,11 +245,20 @@ class ProjectController extends Controller
             $model->attributes = $_GET['Project'];
 
         //var_dump($model);
-        $this->render('index', array(
+        $this->render('list', array(
             'model' => $model,
         ));
 	}
 
+    public function actionIndex()
+    {
+        $attribs = array('deleted'=>0);
+        $model = Project::model()->findAllByAttributes($attribs);
+
+        $this->render('index', array(
+            'model' => $model,
+        ));
+    }
 	/**
 	 * Manages all models.
 	 */
