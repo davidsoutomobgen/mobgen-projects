@@ -16,63 +16,47 @@
             <div class="widget-title">
                 <span class="icon"><i class="fa fa-th"></i></span>
                 <h5>Projects</h5>
+                <a href="/cms/project/list" class="right"><span class="icon"><i class="fa fa-th-list"></i></span></a>
             </div>
-            <div class="widget-content nopadding">
 
+            <div class="widget-content">
                 <?php
-                $this->widget('zii.widgets.grid.CGridView', array(
-                    'id' => 'project-grid',
-                    'cssFile' => 'false',
-                    'summaryText' => '{start}-{end} to {count}',
-                    'dataProvider' => $model->search(),
-                    'filter' => $model,
-                    'selectableRows'=>1,
-                    'selectionChanged'=>'function(id){
-                        location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);
-                    }',
-                    'columns' => array(
-                        array(
-                            'header' => 'Logo',
-                            'type' => 'raw',
-                            'value' => '!empty($data->logo) ? CHtml::image(Utils::imageUrl("..".DS."files".DS."projects".DS.$data->logo), $data->name, array("width"=>45)) : CHtml::image(Utils::imageUrl("..".DS."files".DS."empty.png"), $data->name, array("width"=>45)) ',
-                        ),
-                        'name',
-                        'alias',
-                        'description',
-                        array(
-                            'name' => 'date_created',
-                            'value' => 'Utils::date($data->date_created)',
-                        ),
-                        array(
-                            'name' => 'date_updated',
-                            'value' => '$data->date_updated != $data->date_created ? Utils::date($data->date_updated) : "never"',
-                        ),
-                        array(
-                            'header' => 'Actions',
-                            'class' => 'CButtonColumn',
-                            'template' => '{view}{update}{delete}',
-                            'buttons' => array(
-                                'view' => array(
-                                    'imageUrl'=>_bu('/images/view.png'),
-                                ),
-                                'update' => array(
-                                    'imageUrl'=>_bu('/images/update.png'),
-                                ),
-                                'delete' => array(
-                                    'imageUrl'=>_bu('/images/delete.png'),
-                                ),
-                            ),
-                        ),
-                    ),
-                    'pager' => array(
-                        'cssFile' => false,
-                        'header' => '',
-                        'firstPageLabel' => 'First',
-                        'prevPageLabel' => 'Previous',
-                        'nextPageLabel' => 'Next',
-                        'lastPageLabel' => 'Last',
-                    ),
-                ));
+                //var_dump($model);die;
+                foreach ($model as $a){
+                    $data = $a->attributes;
+
+                    if (!empty($data['logo'])) {
+                        $image = Utils::imageUrl("..".DS."files".DS."projects".DS.$data['logo']);
+                        echo '<div class="project_button" style="background-image:url(\''.$image.'\');">';
+                            echo '<p class="projects_options">';
+                                echo '<a href="/cms/project/update/'.$data['id'].'"><image src="'.Utils::imageUrl("button_edit.png").'" /></a>';
+                                echo '<a href="/cms/project/delete/'.$data['id'].'"><img src="'.Utils::imageUrl("button_delete.png")    .'"/></a>';
+                            echo '</p>';
+                            echo '<p class="project_lupa">';
+                                echo '<a href="/cms/project/view/'.$data['id'].'" class="project_button_small">';
+                                echo '</a>';
+                            echo '</p>';
+                        echo '</div>';
+
+                    } else {
+                        $image = Utils::imageUrl("..".DS."files".DS."plus-empty_128.png");
+                        echo '<div class="project_button" style="background-image:url(\''.$image.'\');">';
+                            echo '<p class="projects_options">';
+                                echo '<a href="/cms/project/update/'.$data['id'].'"><image src="'.Utils::imageUrl("button_edit.png").'" /></a>';
+                                echo '<a href="/cms/project/delete/'.$data['id'].'"><img src="'.Utils::imageUrl("button_delete.png")    .'"/></a>';
+                            echo '</p>';
+                            echo '<p class="project_lupa">';
+                                echo '<a href="/cms/project/view/'.$data['id'].'" class="project_button_small">';
+                                echo '</a>';
+                            echo '</p>';
+                            echo '<p class="project_name">'.$data['name'].'</p>';
+                        echo '</div>';
+                    }
+
+
+
+
+                }
                 ?>
             </div>
         </div>

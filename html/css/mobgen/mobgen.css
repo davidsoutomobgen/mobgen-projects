@@ -1168,6 +1168,8 @@ a:hover {
 }
 .widget-box .widget-content {
   padding: 12px 15px;
+  height: auto;
+  overflow: auto;
 }
 .widget-box .widget-content > hr {
   margin: 20px -15px;
@@ -6029,4 +6031,62 @@ select#ems-selected-options {
 
 .padding_top_40{
     padding-top: 40px !important;
+}
+
+/* List of projects */
+.project_button {
+    width: 148px;
+    height: 148px;
+    background-repeat: no-repeat;
+    background-size: 148px;
+    margin: 20px 10px 20px 0;
+    float: left;
+    border-radius: 16px;
+}
+
+.project_button_small {
+    width: 148px;
+    height: 148px;
+    background-repeat: no-repeat;
+    background-size: 148px;
+    margin: 0px;
+    float: left;
+    border-radius: 16px;
+    margin-top:-10px;
+    position:relative;
+}
+
+p.projects_options {
+    text-align: right;
+    top: 6px;
+    position: relative;
+    z-index:33;
+}
+
+p.projects_options img {
+    margin: 0 5px;
+}
+p.project_name{
+    top: 150px;
+    position: absolute;
+    width: 148px;
+    background-color: #fff;
+    text-align: center;
+    height: 22px;
+}
+
+p.project_lupa a:hover {
+    background-image: url('/images/button_view.png');
+    background-size:40px;
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-color: grey;
+    opacity:0.7;
+    top:-20px
+
+}
+
+.right {
+    display:block;
+    float:right;
 }
