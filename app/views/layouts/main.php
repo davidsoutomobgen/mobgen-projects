@@ -45,16 +45,17 @@ Yii::app()->clientScript->registerCoreScript('jquery');
     <a id="menu-trigger" href="/site"><i class="fa fa-bars"></i></a>
 </div>
 <div id="user-nav">
-    <ul class="btn-group" style="width: auto; margin: 0px;">
-        <li class="btn"><a title="" href="/cms/user/"><i class="fa fa-user"></i> <span class="text">Profile</span></a></li>
-        <!--
-        <li class="btn dropdown" id="menu-messages"><a href="./js/Unicorn Admin.html" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="fa fa-envelope"></i> <span class="text">Messages</span> <span class="label label-danger">5</span> <b class="caret"></b></a>
-            <ul class="dropdown-menu messages-menu">
-                <li class="title"><i class="fa fa-envelope-alt"></i>Messages<a class="title-btn" href="./js/Unicorn Admin.html" title="Write new message"><i class="fa fa-share"></i></a></li>
-                <li class="message-item">
-                    <a href="./js/Unicorn Admin.html">
-                        <img alt="User Icon" src="./js/av1.jpg">
-                        <div class="message-content">
+    <?php if (!Yii::app()->user->isGuest) { ?>
+        <ul class="btn-group" style="width: auto; margin: 0px;">
+            <li class="btn"><a title="" href="/cms/user/"><i class="fa fa-user"></i> <span class="text">Profile</span></a></li>
+            <!--
+            <li class="btn dropdown" id="menu-messages"><a href="./js/Unicorn Admin.html" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="fa fa-envelope"></i> <span class="text">Messages</span> <span class="label label-danger">5</span> <b class="caret"></b></a>
+                <ul class="dropdown-menu messages-menu">
+                    <li class="title"><i class="fa fa-envelope-alt"></i>Messages<a class="title-btn" href="./js/Unicorn Admin.html" title="Write new message"><i class="fa fa-share"></i></a></li>
+                    <li class="message-item">
+                        <a href="./js/Unicorn Admin.html">
+                            <img alt="User Icon" src="./js/av1.jpg">
+                            <div class="message-content">
 		                            	<span class="message-time">
 			                                3 mins ago
 			                            </span>
@@ -64,13 +65,13 @@ Yii::app()->clientScript->registerCoreScript('jquery');
 		                                <span class="message">
 		                                    Hi, can you meet me at the office tomorrow morning?
 		                                </span>
-                        </div>
-                    </a>
-                </li>
-                <li class="message-item">
-                    <a href="./js/Unicorn Admin.html">
-                        <img alt="User Icon" src="./js/av1.jpg">
-                        <div class="message-content">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="message-item">
+                        <a href="./js/Unicorn Admin.html">
+                            <img alt="User Icon" src="./js/av1.jpg">
+                            <div class="message-content">
 		                            	<span class="message-time">
 			                                3 mins ago
 			                            </span>
@@ -80,13 +81,13 @@ Yii::app()->clientScript->registerCoreScript('jquery');
 		                                <span class="message">
 		                                    Hi, can you meet me at the office tomorrow morning?
 		                                </span>
-                        </div>
-                    </a>
-                </li>
-                <li class="message-item">
-                    <a href="./js/Unicorn Admin.html">
-                        <img alt="User Icon" src="./js/av1.jpg">
-                        <div class="message-content">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="message-item">
+                        <a href="./js/Unicorn Admin.html">
+                            <img alt="User Icon" src="./js/av1.jpg">
+                            <div class="message-content">
 		                            	<span class="message-time">
 			                                3 mins ago
 			                            </span>
@@ -96,18 +97,19 @@ Yii::app()->clientScript->registerCoreScript('jquery');
 		                                <span class="message">
 		                                    Hi, can you meet me at the office tomorrow morning?
 		                                </span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        -->
-        <li class="btn"><a title="" href="/cms/setting/"><i class="fa fa-cog"></i> <span class="text">Settings</span></a></li>
-        <li class="btn"><a title="" href="/site/logout"><i class="fa fa-share"></i> <span class="text">Logout</span></a></li>
-    </ul>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            -->
+            <li class="btn"><a title="" href="/cms/setting/"><i class="fa fa-cog"></i> <span class="text">Settings</span></a></li>
+            <li class="btn"><a title="" href="/site/logout"><i class="fa fa-share"></i> <span class="text">Logout</span></a></li>
+        </ul>
+    <?php } ?>
 </div>
 
-    <!--
+<!--
 <div id="switcher">
     <div id="switcher-inner">
         <h3>Theme Options</h3>
@@ -132,14 +134,16 @@ Yii::app()->clientScript->registerCoreScript('jquery');
         <i class="fa fa-cogs"></i>
     </div>
 </div>
-        -->
+-->
 
 
 <div id="sidebar" tabindex="5000" style="">
-    <div id="search">
-        <input type="text" placeholder="Search here..."><button type="submit" class="tip-right" title="" data-original-title="Search"><i class="fa fa-search"></i></button>
-    </div>
-    <?php $this->widget('MainMenu'); ?>
+    <?php if (!Yii::app()->user->isGuest) { ?>
+        <div id="search">
+            <input type="text" placeholder="Search here..."><button type="submit" class="tip-right" title="" data-original-title="Search"><i class="fa fa-search"></i></button>
+        </div>
+        <?php $this->widget('MainMenu'); ?>
+    <?php } ?>
 </div>
 
 <div id="content">
