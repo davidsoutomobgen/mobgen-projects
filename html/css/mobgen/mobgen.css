@@ -2477,8 +2477,8 @@ form .form-group:last-child {
   text-shadow: 0 1px 0 #fff;
 }
 .form-horizontal .form-actions {
-  background-color: #f4f4f4;
-  padding: 10px 40px 10px 200px;
+  /*background-color: #f4f4f4;*/
+  padding: 10px 40px 10px 218px;
 }
 .nopadding .form-horizontal .form-actions {
   border-bottom-right-radius: 6px;
@@ -3192,17 +3192,18 @@ span.icon .checker {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #34495e;
-  border-color: #34495e;
+  background-color: #eb5929;
+  border-color: #eb5929;
 }
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-  color: #ffffff;
-  background-color: #253544;
-  border-color: #1e2a37;
+  color: #eb5929;
+  background-color: #c3c3c3;
+  border-color: #c3c3c3;
+  font-weight: bold;
 }
 .btn-primary:active,
 .btn-primary.active,
