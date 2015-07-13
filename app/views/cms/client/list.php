@@ -37,7 +37,7 @@
                         array(
                             'header' => 'Actions',
                             'class' => 'CButtonColumn',
-                            'template' => '{view}{update}{delete}',
+                            /*'template' => '{view}{update}{delete}',
                             'buttons' => array(
                                 'view' => array(
                                     'imageUrl'=>_bu('/images/view.png'),
@@ -49,6 +49,10 @@
                                     'imageUrl'=>_bu('/images/delete.png'),
                                 ),
                             ),
+                            */
+                            'viewButtonUrl'=>'Yii::app()->createUrl(\'cms/client/view/\'. $data->id)',
+                            'updateButtonUrl'=>'Yii::app()->createUrl(\'cms/client/update/\'. $data->id)',
+                            'deleteButtonUrl'=>'Yii::app()->createUrl(\'cms/client/delete/\'. $data->id)',
                         ),
                     ),
                     'pager' => array(

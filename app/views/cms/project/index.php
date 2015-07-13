@@ -24,37 +24,24 @@
                 //var_dump($model);die;
                 foreach ($model as $a){
                     $data = $a->attributes;
+                    echo '<div class="project_all">';
+                        echo '<p class="projects_options">';
+                            echo '<a href="/cms/project/update/'.$data['id'].'"><image src="'.Utils::imageUrl("button_edit.png").'" /></a>';
+                            echo '<a href="/cms/project/delete/'.$data['id'].'"><img src="'.Utils::imageUrl("button_delete.png")    .'"/></a>';
+                        echo '</p>';
+                        if (!empty($data['logo']))
+                            $image = Utils::imageUrl("..".DS."files".DS."projects".DS.$data['logo']);
+                        else
+                            $image = Utils::imageUrl("..".DS."files".DS."plus-empty_128.png");
 
-                    if (!empty($data['logo'])) {
-                        $image = Utils::imageUrl("..".DS."files".DS."projects".DS.$data['logo']);
                         echo '<div class="project_button" style="background-image:url(\''.$image.'\');">';
-                            echo '<p class="projects_options">';
-                                echo '<a href="/cms/project/update/'.$data['id'].'"><image src="'.Utils::imageUrl("button_edit.png").'" /></a>';
-                                echo '<a href="/cms/project/delete/'.$data['id'].'"><img src="'.Utils::imageUrl("button_delete.png")    .'"/></a>';
-                            echo '</p>';
                             echo '<p class="project_lupa">';
-                                echo '<a href="/cms/project/view/'.$data['id'].'" class="project_button_small">';
-                                echo '</a>';
-                            echo '</p>';
-                        echo '</div>';
-
-                    } else {
-                        $image = Utils::imageUrl("..".DS."files".DS."plus-empty_128.png");
-                        echo '<div class="project_button" style="background-image:url(\''.$image.'\');">';
-                            echo '<p class="projects_options">';
-                                echo '<a href="/cms/project/update/'.$data['id'].'"><image src="'.Utils::imageUrl("button_edit.png").'" /></a>';
-                                echo '<a href="/cms/project/delete/'.$data['id'].'"><img src="'.Utils::imageUrl("button_delete.png")    .'"/></a>';
-                            echo '</p>';
-                            echo '<p class="project_lupa">';
-                                echo '<a href="/cms/project/view/'.$data['id'].'" class="project_button_small">';
-                                echo '</a>';
+                            echo '<a href="/cms/project/view/'.$data['id'].'" class="project_button_small">';
+                            echo '</a>';
                             echo '</p>';
                             echo '<p class="project_name">'.$data['name'].'</p>';
                         echo '</div>';
-                    }
-
-
-
+                    echo '</div>';
 
                 }
                 ?>

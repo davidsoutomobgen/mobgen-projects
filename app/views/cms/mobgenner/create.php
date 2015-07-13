@@ -14,4 +14,4 @@
 
 </div>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'user'=>$user)); ?>

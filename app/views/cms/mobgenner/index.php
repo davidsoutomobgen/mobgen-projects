@@ -26,6 +26,10 @@
                     'summaryText' => '{start}-{end} to {count}',
                     'dataProvider' => $model->search(),
                     'filter' => $model,
+                    'rowCssClassExpression' => '
+                        ( $row%2 ? $this->rowCssClass[1] : $this->rowCssClass[0] ) .
+                        ( $data->active ? null : " disabled" )
+                    ',
                     'selectableRows'=>1,
                     'selectionChanged'=>'function(id){
                         location.href = "'.$this->createUrl('view').'/id/"+$.fn.yiiGridView.getSelection(id);
