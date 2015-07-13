@@ -2,7 +2,7 @@
 <div id="content-header">
     <h1>Project: "<?php echo $model->name; ?>"</h1>
     <div class="btn-group">
-        <a title="Manage Files" class="btn"><i class="fa fa-edit"></i></a>
+        <a href="/cms/project/update/<?php echo $model->id;?>" title="Manage Files" class="btn"><i class="fa fa-edit"></i></a>
         <a title="Manage Users" class="btn"><i class="fa fa-trash-o"></i></a>
         <a href="/cms/projects/index" title="Go Project Types" class="btn"><i class="fa fa-level-up"></i></a>
     </div>

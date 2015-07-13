@@ -47,7 +47,8 @@ Yii::app()->clientScript->registerCoreScript('jquery');
 <div id="user-nav">
     <?php if (!Yii::app()->user->isGuest) { ?>
         <ul class="btn-group" style="width: auto; margin: 0px;">
-            <li class="btn"><a title="" href="/cms/user/"><i class="fa fa-user"></i> <span class="text">Profile</span></a></li>
+            <li class=""><span class="text hello">Hi, <?php echo Yii::app()->user->id; ?></span></li>
+            <li class="btn"><a title="" href="/admin/editUser?id=<?php echo Webuser::model()->getUserId(); ?>"><i class="fa fa-user"></i> <span class="text">Profile</span></a></li>
             <!--
             <li class="btn dropdown" id="menu-messages"><a href="./js/Unicorn Admin.html" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="fa fa-envelope"></i> <span class="text">Messages</span> <span class="label label-danger">5</span> <b class="caret"></b></a>
                 <ul class="dropdown-menu messages-menu">
@@ -103,7 +104,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 </ul>
             </li>
             -->
-            <li class="btn"><a title="" href="/cms/setting/"><i class="fa fa-cog"></i> <span class="text">Settings</span></a></li>
+            <!-- <li class="btn"><a title="" href="/cms/setting/"><i class="fa fa-cog"></i> <span class="text">Settings</span></a></li> -->
             <li class="btn"><a title="" href="/site/logout"><i class="fa fa-share"></i> <span class="text">Logout</span></a></li>
         </ul>
     <?php } ?>

@@ -142,22 +142,46 @@
                 </div>
                 <!-- NEW FIELDS -->
                 <?php
-                //var_dump($new_field);die;
+                //echo '<pre>';print_r($new_field);echo '</pre>'; //die;
+                $i = 0;
                 if (!empty($new_field)){
-                    foreach ($new_field[0] as $field) {
-                        $f = $field->attributes;
-                        //var_dump($f);die;
-                        echo '<div class="form-group">';
-                            echo $form->labelEx($model, $f['label'], array('class' => 'col-sm-3 col-md-3 col-lg-2 control-label'));
-                            echo '<div class="col-sm-9 col-md-9 col-lg-10">';
-                            $type = $model->getTypeField();
-                            $content = NewFieldValues::model()->findAllByAttributes(array('new_field'=>$f['id'], 'view_id'=>$model->id));
-                            if (!empty($content[0]->value)) $value=$content[0]->value;
-                            else $value='';
-                            echo '<input type="'.$type[$f['type_field']].'" name="NewField['.$f['id'].']" id="'.$f['id'].'" class="form-control input-sm" placeholder="'.$f['label'].'" value="'.$value.'" />';
+                    foreach ($new_field as $field) {
+                        //echo $i.'<br>';
+                        //echo '<pre>';print_r($field);echo '</pre>'; //die;
+                        if (!empty($field[0])){
+
+                            $f = $field[0]->attributes;
+                            echo '<div class="form-group">';
+                                echo $form->labelEx($model, $f['label'], array('class' => 'col-sm-3 col-md-3 col-lg-2 control-label'));
+                                echo '<div class="col-sm-9 col-md-9 col-lg-10">';
+                                $type = $model->getTypeFieldHTML();
+                                $content = NewFieldValues::model()->findAllByAttributes(array('new_field'=>$f['id'], 'view_id'=>$model->id));
+                                if (!empty($content[0]->value)) $value=$content[0]->value;
+                                else $value='';
+                                if ($f['type_field'] == 1) {
+                                    if ($value==1){
+                                        $checked_0 = '';
+                                        $checked_1 = 'checked="checked"';
+                                    }
+                                    else {
+                                        $checked_0 = 'checked="checked"';
+                                        $checked_1 = '';
+                                    }
+                                    echo '<input type="'.$type[$f['type_field']].'" name="NewField['.$f['id'].']" id="'.$f['id'].'" class="form-control input-sm" placeholder="'.$f['label'].'" value="0" '. $checked_0  .'/> False';
+                                    echo '<input type="'.$type[$f['type_field']].'" name="NewField['.$f['id'].']" id="'.$f['id'].'" class="form-control input-sm" placeholder="'.$f['label'].'" value="1" '. $checked_1 .' /> True';
+
+                                } elseif ($f['type_field'] == 2) {
+                                    echo '<input type="'.$type[$f['type_field']].'" name="NewField['.$f['id'].']" id="'.$f['id'].'" class="form-control input-sm" placeholder="'.$f['label'].'" value="'.$value.'" />';
+                                }
+                                elseif ($f['type_field'] == 3) {
+                                    echo '<textarea  name="NewField['.$f['id'].']" id="'.$f['id'].'" class="form-control input-sm" placeholder="'.$f['label'].'"  >'.$value.'</textarea>';
+                                }
+
+                                echo '</div>';
+                                echo $form->error($model, $f['label']);
                             echo '</div>';
-                            echo $form->error($model, $f['label']);
-                        echo '</div>';
+                        }
+                        $i++;
                     }
                 }
                 ?>
