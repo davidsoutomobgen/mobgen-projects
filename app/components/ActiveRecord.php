@@ -246,9 +246,21 @@ class ActiveRecord extends CActiveRecord {
             1 => "Checkbox (true/false)",
             2 => "Input",
             3 => "Textarea",
-            4 => "Textarea Advanced",
-            5 => "Link",
-            6 => "Email",
+            //4 => "Textarea Advanced",
+            5 => "Link(NOT AVAILABLE)",
+            6 => "Email(NOT AVAILABLE)",
+        );
+    }
+
+    public function getTypeFieldHTML()
+    {
+        return array(
+            1 => "radio", //Checkbox (true/false)",
+            2 => "input",
+            3 => "Textarea",
+            //4 => "Textarea Advanced",
+            5 => "Link(NOT AVAILABLE)",
+            6 => "Email(NOT AVAILABLE)",
         );
     }
 

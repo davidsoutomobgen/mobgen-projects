@@ -67,7 +67,7 @@ class ProjectController extends Controller
         //if (isset($_GET['Project']))
             //$model->attributes = $_GET['Project'];
 
-       // var_dump($client);die;
+        //echo '<pre>';print_r($new_field);echo '</pre>'; die;
 
 		$this->render('full_view',array(
 			'model'=>$this->loadModel($id),
@@ -181,15 +181,28 @@ class ProjectController extends Controller
                 if (isset($_POST['NewField'])) {
                     $fields = $_POST['NewField'];
                     foreach ($fields as $k=>$ff){
-                        $newField = new NewFieldValues();
-                        $newField->new_field = (int) $k;
-                        $newField->view_id = $model->id;
-                        $newField->value = $ff;
+                        $attribs = array('view_id'=>$model->id, 'new_field'=>$k);
+                        $criteria = new CDbCriteria(array('order'=>'id DESC'));
+                        $field = NewFieldValues::model()->findAllByAttributes($attribs, $criteria);
+
+                        if (!empty($field)) {
+                            $newField = NewFieldValues::model()->findByPk($field[0]->attributes['id']);
+                            $newField->value = $ff;
+                        }
+                        else {
+                            $newField = new NewFieldValues();
+                            $newField->new_field = (int) $k;
+                            $newField->view_id = $model->id;
+                            $newField->value = $ff;
+                        }
                         $newField->save();
+
+
+
                     }
                 }
 
-                $this->redirect(array('index'));
+                $this->redirect(array('/cms/project/view/'.$model->id));
             }
         }
     }
