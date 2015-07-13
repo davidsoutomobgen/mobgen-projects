@@ -107,4 +107,11 @@ class Webuser extends CActiveRecord
         );
     }
 
+    public function getUserId(){
+        $username = Yii::app()->user->id;
+        $user = $this->findByAttributes(array('username' => $username));
+        return $user->id;
+    }
+
+
 }

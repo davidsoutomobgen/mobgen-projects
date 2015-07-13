@@ -435,6 +435,14 @@ a:hover {
   position: absolute;
   top: -6px;
 }
+#user-nav span.text.hello {
+    padding: 11.5px 10px;
+    display: block;
+    font-size: 10px;
+    color: #fff
+}
+
+
 @media (max-width: 767px) {
   #user-nav > ul > li > a > span.text {
     display: none;
@@ -6034,13 +6042,34 @@ select#ems-selected-options {
     padding-top: 40px !important;
 }
 
+input[type="checkbox"], input[type="radio"] {
+    width: auto;
+    display: inline;
+    margin-left: 10px;
+    margin-right:4px;
+    margin-top: 0px;
+}
+
 /* List of projects */
+
+.project_all {
+    background-color: white;
+    position: relative;
+    float: left;
+    width: 208px;
+    height: 208px;
+    margin: 10px 20px;
+    border: 1px solid #c3c3c3;
+    border-radius: 12px !important;
+}
+
+
 .project_button {
     width: 148px;
     height: 148px;
     background-repeat: no-repeat;
     background-size: 148px;
-    margin: 20px 10px 20px 0;
+    margin: 6px 30px 10px 30px;
     float: left;
     border-radius: 16px;
 }
@@ -6068,10 +6097,10 @@ p.projects_options img {
     margin: 0 5px;
 }
 p.project_name{
-    top: 150px;
+    top: 186px;
     position: absolute;
     width: 148px;
-    background-color: #fff;
+    background-color: transparent;
     text-align: center;
     height: 22px;
 }
@@ -6083,7 +6112,7 @@ p.project_lupa a:hover {
     background-position: center center;
     background-color: grey;
     opacity:0.7;
-    top:-20px
+    top:10px
 
 }
 

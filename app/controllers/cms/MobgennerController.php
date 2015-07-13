@@ -66,10 +66,12 @@ class MobgennerController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+        $user->role = '';
 
         $this->_process($model);
 		$this->render('create',array(
 			'model'=>$model,
+            'user'=>$user,
 		));
 	}
 
@@ -86,7 +88,7 @@ class MobgennerController extends Controller
 		// $this->performAjaxValidation($model);
 
         $this->_process($model);
-        $user = '';
+        $user->role = '';
         if ($model->user != 0)
             $user = Webuser::model()->findByPk($model->user);
 
