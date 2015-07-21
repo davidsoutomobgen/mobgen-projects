@@ -15,7 +15,7 @@ $this->menu=array(
 
 <h1>New Fields</h1>
 
-<a href="/cms/newfield/create" class="btn btn-large" title="Add new type"><i class="fa fa-plus"></i></a>
+<a href="/cms/newField/create" class="btn btn-large" title="Add new type"><i class="fa fa-plus"></i></a>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
