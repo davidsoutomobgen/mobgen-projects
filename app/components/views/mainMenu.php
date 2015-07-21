@@ -15,7 +15,7 @@
             'items' => array(
                 array(
                     'label' => '<i class="fa fa-indent"></i><span>New fields</span>',
-                    'url' => '/cms/newfield',
+                    'url' => '/cms/newField',
                 ),
                 array(
                     'label' => '<i class="fa fa-file-archive-o"></i><span>View logs</span>',
